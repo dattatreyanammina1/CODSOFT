@@ -1,38 +1,40 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> //headerfile
 using namespace std;
 
-int main(){
-    double a,b;
-    char symbol;
-
-    cout<<"Enter the two numbers to which you want to perform an operation: "<<endl;
-    cin>>a>>b;
-
-    cout<<"Enter the symbol to perform an operation(+,-,*,/): "<<endl;
-    cin>>symbol;
-
-        switch(symbol){
+double perform_operation(int a, int b , char symbol){
+        switch(symbol){ //accessing symbol using switch operation
             case '+':
-                        cout<<"The Addition of given two numbers is: "<<fixed<<setprecision(3)<<a+b<<endl;
-                        break;
+                        return a+b;  //adds two numbers using this statement
             case '-':
-                        cout<<"The Subtraction of given two numbers is: "<<fixed<<setprecision(3)<<a-b<<endl;
-                        break;
+                        return a-b;  //subtracts two numbers using this statement
             case '*':
-                        cout<<"The Product of given two numbers is: "<<fixed<<setprecision(3)<<a*b<<endl;
-                        break;
+                        return a*b;  //multiplies given two numbers using this statement
             case '/':
-                        if(a==0 || b==0){
-                            cout<<"Division by zero is not allowed."<<endl;
-                            return 1;
+                        if(a==0 || b==0){ //dividing a number with 0 is not allowed
+                            cout<<"Division with zero is not allowed"<<endl;
                         }else{
-                            cout<<"The Division of given two numbers is: "<<fixed<<setprecision(3)<<a/b<<endl;
+                            return static_cast<double>(a) / b;  //converts integer to double using static cast
                         }
                         break;
             default:
-            cout<<"Invalid operator."<<endl;
-            return 1;
-        }
+            cout<<"Invalid Operator"<<endl; //if we choose anyother operator than mentioned, prints invalid operator
+            break;
 
-        return 0;
-    }
+        }
+}
+
+int main(){
+    double a,b,result;
+    char symbol;
+
+    cout<<"Enter the two numbers to which you want to perform an operation: ";
+    cin>>a>>b; //takes input of two numbers from the user
+
+    cout<<"Enter the symbol to perform an operation(+,-,*,/): ";
+    cin>>symbol; //takes input as symbol from the user
+
+    result = perform_operation(a,b,symbol);  //runs the perform_operation function and stores in result
+    cout<<"Result for the choosen operands "<<a<<" and " <<b<< ", the operator "<<symbol<<" is: "<<fixed<<setprecision(3)<<result<<endl;
+                                                                //result for the operation will be printed here
+        return 0; //ends the program
+}
