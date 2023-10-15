@@ -34,7 +34,7 @@ int main(){
     cin>>symbol; //takes input as symbol from the user
 
     result = perform_operation(a,b,symbol);  //runs the perform_operation function and stores in result
-    cout<<"Result for the choosen operands "<<a<<" and " <<b<< ", the operator "<<symbol<<" is: "<<fixed<<setprecision(3)<<result<<endl;
-                                                                //result for the operation will be printed here
+    cout<<"Result for the choosen operands "<<a<<" and " <<b<< ", the operator "<<symbol<<" is: "<<fixed<<setprecision(3)<<result<<endl;  //result for the operation will be printed here
+
         return 0; //ends the program
 }
