@@ -1,0 +1,23 @@
+#include <bits/stdc++.h> 
+using namespace std;
+
+int main(){
+int number, guess_no, attempts=0;
+srand(time(0));
+number=rand() % 100 +1;
+cout<<"Guess My Number Game:\n\n";
+
+do{
+    cout<<"Enter a guess_no between 1 and 100: ";
+    cin>> guess_no;
+    attempts++;
+    if (guess_no > number)
+    cout<<"Too high\n";
+    else if (guess_no < number)
+    cout << "too low\n\n";
+    else 
+    cout << "Hurray! You got it correct in "<<attempts<<" attempts!\n";
+}while (guess_no != number);
+
+return 0;
+}
